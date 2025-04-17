@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D City Explorer - Fog Settings</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/",
+        "three/loaders/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader-container">
+      <div class="loader"></div>
+      <p id="loading-text">Loading Scene...</p>
+      <p id="loading-progress">0%</p>
+    </div>
+  </div>
+
+  <div id="container"></div>
+  <div id="instructions">
+    <h1>City Explorer</h1>
+    <p>W, A, S, D = Move, SPACE = Jump, MOUSE = Look around</p>
+    <p>Click to start</p>
+  </div>
+  
+  <div id="fog-settings">
+    <h2>Fog Settings <span id="toggle-settings">🔒</span></h2>
+    <div class="setting">
+      <label for="fog-color">Fog Color</label>
+      <input type="color" id="fog-color" value="#ffffff">
+      <label for="fog-alpha">Fog Alpha (0-1)</label>
+      <input type="range" id="fog-alpha" min="0" max="1" step="0.01" value="0.5">
+      <span id="fog-alpha-value">0.5</span>
+    </div>
+    <div class="setting">
+      <label for="fog-near">Fog Near (-100 to 10)</label>
+      <input type="range" id="fog-near" min="-100" max="10" step="0.1" value="0.2">
+      <span id="fog-near-value">0.2</span>
+    </div>
+    <div class="setting">
+      <label for="fog-far">Fog Far (-100 to 100)</label>
+      <input type="range" id="fog-far" min="-100" max="100" step="1" value="3">
+      <span id="fog-far-value">3</span>
+    </div>
+    <div class="setting">
+      <label for="fog-density">Fog Density (0-1)</label>
+      <input type="range" id="fog-density" min="0" max="1" step="0.01" value="0.5">
+      <span id="fog-density-value">0.5</span>
+    </div>
+    <div class="setting">
+      <label for="ambient-intensity">Ambient Light Intensity (0-1)</label>
+      <input type="range" id="ambient-intensity" min="0" max="1" step="0.1" value="0.2">
+      <span id="ambient-intensity-value">0.2</span>
+    </div>
+    <div class="setting">
+      <label for="directional-intensity">Directional Light Intensity (0-1)</label>
+      <input type="range" id="directional-intensity" min="0" max="1" step="0.1" value="0.5">
+      <span id="directional-intensity-value">0.5</span>
+    </div>
+  </div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
